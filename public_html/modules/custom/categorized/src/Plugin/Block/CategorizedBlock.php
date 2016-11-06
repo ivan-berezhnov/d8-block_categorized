@@ -2,6 +2,7 @@
 
 namespace Drupal\categorized\Plugin\Block;
 
+use Doctrine\Common\Proxy\Exception\InvalidArgumentException;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Block\BlockPluginInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -62,6 +63,9 @@ class CategorizedBlock extends BlockBase implements BlockPluginInterface {
    * @return array
    */
   public function getTerms($vid) {
+    if (!is_int($vid)) {
+      throw new InvalidArgumentException('Please provide a set of integers.');
+    }
     $query = \Drupal::entityQuery('taxonomy_term');
     $query->condition('vid', $vid);
     $tids = $query->execute();
