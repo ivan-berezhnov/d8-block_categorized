@@ -1,0 +1,22 @@
+status: true
+dependencies:
+  module:
+    - categorized
+  theme:
+    - bartik
+id: categorized
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: categorized
+settings:
+  id: categorized
+  label: Categorized
+  provider: categorized
+  label_display: visible
+  description:
+    value: "<p>1. Please select 'tags' or create a new vocabulary.</p><p>2. Create terms in that vocabulary and add content with them.</p>\r\n"
+    format: basic_html
+  categories: "tags"
+visibility: {  }

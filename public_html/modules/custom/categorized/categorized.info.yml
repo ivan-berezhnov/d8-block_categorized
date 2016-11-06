@@ -1,0 +1,8 @@
+name: Categorized
+description: Add new block Categorized Block.
+core: 8.x
+package: Categorized
+dependencies:
+- node
+- block
+type: module

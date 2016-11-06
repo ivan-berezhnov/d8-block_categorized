@@ -1,0 +1,16 @@
+<div class="block">
+    {{ description }}
+
+    {% if term %}
+        <h3>Categories from {{ categories }} :</h3>
+        <ul>
+            {% for term in terms %}
+                <li>
+                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': term.tid}) }}">
+                        {{ term.name|t }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
